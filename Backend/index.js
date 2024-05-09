@@ -32,8 +32,7 @@ app.use(route);
 
 app.get('/', async (req, res) => {
     try {
-
-
+        res.redirect('/login');
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal server error');

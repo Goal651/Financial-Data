@@ -2,7 +2,6 @@ const { Budget } = require('../models/model')
 
 
 
-
 const createBudget = async (req, res) => {
     try {
 
@@ -73,8 +72,10 @@ const updateBudget = async (req, res) => {
 
 const deleteBudget = async (req, res) => {
     try {
+
         const id = req.body.id;
-        const deleted = await Budget.findByIdAndDelete(id)
+        const deleted = await Budget.findByIdAndDelete(id);
+
         if (!deleted) {
             res.status(404).json({ message: 'Failed to delete' })
             return;

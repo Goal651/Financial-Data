@@ -1,5 +1,5 @@
 const { User, Budget } = require("../models/model")
-const session=require('express-session');
+const session = require('express-session');
 
 const getUsers = async (req, res) => {
     try {

@@ -68,7 +68,6 @@ function createBudget() {
         data: data,
         dataType: "json",
         success: function () {
-            closeForm();
             load();
         },
         error: function (error) {
