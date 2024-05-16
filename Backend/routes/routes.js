@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const { createBudget, getBudgets, updateBudget, getBudget, deleteBudget}=require('../controllers/budgetControllers')
+const { createBudget, getBudgets, updateBudget, getBudget, deleteBudget } = require('../controllers/budgetControllers')
 const { getUsers, getUser, createUser, updateUser, deleteUser, checkUser } = require("../controllers/users")
 const { dashBoard } = require('../controllers/pageControllers')
 
