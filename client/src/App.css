@@ -1,0 +1,733 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    border: 0;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+.admin-page table,
+.admin-page th,
+.admin-page tr,
+.admin-page td {
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+.admin-page td {
+    font-size: large;
+}
+
+.admin-page table {
+    border: 2px solid black;
+    border-radius: 10px;
+    table-layout: auto;
+    border-radius: 1rem;
+    border: 3px solid rgba(56, 25, 156, 0.557);
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    margin-bottom: 5rem;
+    margin-top: 10px;
+    color: rgb(3, 3, 70);
+}
+
+.admin-page tr:nth-child(even) {
+    background-color: white;
+    color: rgb(3, 3, 70);
+}
+
+.admin-page table {
+    margin: 5rem;
+}
+
+.admin-page tr:nth-child(odd) {
+    background: linear-gradient(to right, blue, purple);
+    color: #fff;
+}
+
+.admin-page button {
+    background-color: #fff;
+    font-size: large;
+    color: rgb(28, 0, 128);
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+}
+
+.admin-page button:hover {
+    background-color: rgb(13, 104, 231);
+    color: white;
+    border-color: rgb(0, 140, 255);
+}
+
+.admin-page h1 {
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+
+#delete {
+    background-color: white;
+    border-color: black;
+}
+
+#delete:hover {
+    background-color: rgb(223, 40, 40);
+    color: white;
+    border-color: rgb(223, 40, 40);
+}
+
+.admin-page input {
+    padding: 6px;
+    margin: 3px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.admin-page input:focus {
+    border: 2px rgb(0, 140, 255) solid;
+}
+
+.admin-page form {
+    position: fixed;
+    left: 1000px;
+    top: 230px;
+}
+
+.admin-page input[type="search"] {
+    position: absolute;
+    margin-left: 30%;
+    top: 12px;
+    height: 30px;
+    color: teal;
+    font-weight: lighter;
+    border: 1px solid black;
+}
+
+.admin-page a {
+    text-decoration: none;
+    color: lightcoral;
+    margin: 20px;
+}
+
+.admin-page header {
+    background: linear-gradient(to right, blue, purple);
+    font-size: large;
+    font-weight: bolder;
+    padding: 20px;
+    height: 80px;
+    width: 100pc;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 2px 0px 10px var(--primary-color);
+}
+
+.admin-page input::placeholder {
+    font-weight: lighter;
+    color: teal;
+}
+
+.budgets {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5rem;
+}
+
+.budgets-body {
+    display: flex;
+}
+
+
+.budgets table {
+    float: right;
+    background-color: #fff;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-collapse: collapse;
+    overflow: auto;
+    width: 100%;
+    border-radius: 2rem;
+    border: 1.5px solid black;
+}
+
+.budgets table td,
+.budgets table th {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.budgets table tr {
+    border-bottom: 1px solid;
+}
+
+
+.budgets table thead {
+    padding: 2rem;
+    background: lightblue;
+    border-radius: inherit;
+}
+
+.budget-sidebar {
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(1, 12, 20);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    top: -2rem;
+    left: -4rem;
+    width: 100%;
+}
+
+.budgets table tbody tr:nth-child(even) {
+    background-color: #b5cad3;
+    color: rgb(3, 3, 70);
+}
+
+.budgets table tbody button {
+    padding: 0.8rem 2rem;
+    border-radius: 1rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.charts {
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.pie-chart {
+    margin: 1rem;
+    justify-content: center;
+}
+
+#addBudget {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    float: right;
+    background-color: rgb(13, 104, 231);
+    color: #fff;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.edit {
+    background-color: rgb(0, 140, 255);
+}
+
+.delete {
+    background-color: rgb(171, 29, 29);
+}
+
+.budgetSummary div {
+    background-color: #dad4d4;
+    padding: 2rem 4rem;
+    margin: 1rem 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgb(79, 74, 74);
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px rgb(94, 91, 91);
+    z-index: 1;
+}
+
+.header a {
+    color: #010006;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    transition: color 1s, background 1s;
+}
+
+.header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+.header button {
+    background-color: red;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    width: fit-content;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.header button:hover {
+    background-color: rgb(155, 7, 7);
+}
+
+.menu {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.home-page {
+    margin-top: 15%;
+}
+
+.home-page h1 {
+    background: linear-gradient(to right, rgb(2, 2, 220), rgb(125, 225, 243));
+    text-align: center;
+    background-clip: text;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: transparent;
+    margin: 100px;
+    letter-spacing: 2px;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home a {
+    color: rgb(0, 136, 255);
+    font-weight: 600;
+    font-size: 2.2rem;
+    position: relative;
+    transition: color 1s, background 1s;
+
+}
+
+.home-page p {
+    color: #080611;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    line-height: 30px;
+    font-weight: 600;
+    text-align: left;
+
+}
+
+.home-page footer {
+    font-weight: 600;
+    box-shadow: 0 0 4px grey;
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 140, 255);
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+}
+
+.home-page footer ul li {
+    margin-top: 0.2rem;
+
+}
+
+#home {
+    text-align: center;
+}
+
+.home section {
+    margin: 6%;
+}
+
+
+.home-page .search-container {
+    position: absolute;
+    left: 40%;
+    width: fit-content;
+    padding: 10px;
+    top: 0;
+    margin: 1%;
+}
+
+.home-page input[type="search"] {
+    border-color: black;
+    padding: 5%;
+    font-size: large;
+    font-weight: 600;
+    color: black;
+    border-radius: 40px;
+    background: #fff;
+
+}
+
+
+.home-page input[type="search"]::placeholder {
+    color: black;
+    font-weight: 600;
+}
+
+.admin {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: fit-content;
+    color: white;
+}
+
+#sidebar {
+    visibility: hidden;
+    padding-top: 7%;
+    margin-left: 0;
+    margin-top: 0;
+    width: 300px;
+    background: linear-gradient(to right, grey, rgb(180, 176, 176));
+    float: left;
+    position: fixed;
+    height: 500px;
+    border: 0;
+    z-index: 1;
+}
+
+.sidelinking {
+    font-size: larger;
+    background-color: inherit;
+    padding: 3%;
+    width: 80%;
+    font-weight: 700;
+    color: rgb(192, 186, 186);
+    transition: background-color 0.5s, color 1s;
+}
+
+.sidelinking:hover {
+    background-color: rgb(197, 192, 192);
+    color: rgb(233, 233, 243);
+}
+
+.income {
+    position: relative;
+    width: 60%;
+    display: inline-block;
+}
+
+.budget {
+    position: relative;
+    width: 60%;
+    display: inline-block;
+
+}
+
+.finafore {
+    position: relative;
+    width: 60%;
+}
+
+.expense {
+    position: relative;
+}
+
+#home img {
+    display: inline;
+    width: 15%;
+
+}
+
+#side-bar {
+    visibility: hidden;
+    font-size: large;
+    padding: 1%;
+    color: rgb(243, 229, 229);
+    scale: 1.5;
+    border-radius: 50%;
+    left: 0;
+    border: 0;
+    width: 15px;
+    height: 15px;
+    transition: background-color 1s;
+}
+
+#side-bar:hover {
+    background-color: #c2bebe;
+}
+
+
+.login-page {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url("/R.jpg");
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-form h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    color: transparent;
+    background: linear-gradient(to right, rgb(5, 43, 235), rgb(102, 131, 250), rgb(8, 0, 0));
+    background-clip: text;
+    text-align: center;
+}
+
+.login-form {
+    background-color: #fff;
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    float: left;
+    box-shadow: 0px 2px 10px rgb(36, 35, 35);
+    margin: 0rem 2rem;
+    width: 25%;
+}
+
+.login-form input {
+    border-radius: 1rem;
+    color: blue;
+    margin-bottom: 2rem;
+    outline: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 60%;
+    border: 1.5px solid rgb(24, 66, 192);
+}
+
+input:focus {
+    box-shadow: 0 0 11px rgb(0, 60, 255);
+}
+
+.login-form label {
+    font-size: 1.2rem;
+    color: rgba(1, 27, 58, 0.941);
+    margin: 2%;
+    display: block;
+}
+
+.login-form button {
+    background: rgb(31, 49, 248);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    border-color: transparent;
+    margin: 0 0 1rem 3rem;
+    height: auto;
+}
+
+.login-form button:hover {
+    background-color: blue;
+}
+
+.login-form a {
+    display: block;
+    font-size: 1.2rem;
+    color: darkblue;
+    font-weight: 600;
+    margin: 1rem 0 0 3rem;
+}
+
+.signup-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sign {
+    float: left;
+    margin: 0;
+    padding: 0;
+    background-image: url("/signup.jpg");
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.signup-page h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: transparent;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(66, 63, 63), rgb(8, 0, 0));
+    background-clip: text;
+    text-align: center;
+}
+
+.signup-form {
+    overflow-y: auto;
+    padding: 1rem 6rem;
+    display: flex;
+    justify-content: space-around;
+    float: right;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.signup-page input {
+    border: 1.5px solid rgb(61, 8, 207);
+    border-radius: 0.5rem;
+    height: auto;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 60%;
+}
+
+.signup-page input:focus {
+    box-shadow: 0 0 0.5rem rgb(9, 12, 155);
+}
+
+.signup-page h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(2, 28, 50);
+    display: block;
+}
+
+.signup-page h4 {
+    color: grey;
+    font-weight: 100;
+    margin: 3% 0;
+}
+
+.accounts h4 {
+    display: flex;
+    float: right;
+    margin: 2% 0;
+}
+
+.accounts h4:hover {
+    color: black;
+
+}
+
+.signup-page label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(2, 28, 50);
+    margin: 0.5rem 0;
+    display: block;
+}
+
+.signup-page button {
+    background: rgb(13, 13, 204);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    height: auto;
+    width: fit-content
+}
+
+.signup-page button:hover {
+    background: radial-gradient(circle, rgb(159, 159, 162) 0%, rgb(108, 108, 110) 35%, rgb(48, 48, 48) 100%);
+}
+
+.budgetForm {
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.16);
+}
+
+.budgetForm form {
+    position: relative;
+    margin: 1rem 1rem;
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgb(78, 78, 78);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 30%;
+    background-color: white;
+    align-self: center;
+}
+
+.budgetForm form div img {
+    width: 2rem;
+    position: absolute;
+    right: 3rem;
+}
+
+.budgetForm h1 {
+    color: blue;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.budgetForm form input {
+    border: 1.5px solid blue;
+    padding: 1rem 2rem;
+    width: 60%;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 0.5rem;
+}
+
+.budgetForm form label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.budgetForm form button {
+    width: fit-content;
+    padding: 0.9rem 3rem;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
